@@ -5,15 +5,41 @@ lx-angular-alert provides a service with a directive to display information to t
 For this, a box will be temporarily displayed in the UI. On the methods and parameters of the service can be controlled
 content and appearance of the alarm box.
 
-## Installation 
-    $ bower install lx-angular-alert
-    
+## Dependencies
+- angular-bootstrap
+
+## Installation
+
+	$ bower install lx-angular-alert
+
 ## Usage
 
+example.js
+```javascript
+angular.module('example', ['ui.bootstrap', 'lx.alert'])
+.controller('ExampleCtrl', function ($scope, $lxAlert) {
+    $scope.lxAlert = $lxAlert;
+    $scope.showAlert = function(type) {
+        $scope.lxAlert[type]('Info message from controller');
+    };
+});
+```
+example.html
 
-## Demo
-[Edit in Plunker](http://plnkr.co/edit/mBMNaLaw5Udr4FXlspSy?p=preview)
+```html
+<div = ng-controller="DemoCtrl">
+	<h1>Demo</h1>
+	<lx-alert service="lxAlert" on-show="showAlert()"></lx-alert>
+	<div class='btn-group'>
+		<button class='btn btn-default' ng-click="showAlert('info')">Info-Alert</button>
+      	<button class='btn btn-default' ng-click="showAlert('success')">Success-Alert</button>
+      <button class='btn btn-default' ng-click="showAlert('warning')">Warning-Alert</button>
+      <button class='btn btn-default' ng-click="showAlert('danger')">Danger-Alert</button>
+    </div>
+</div>
+```
 
+## [Demo in plunker](http://plnkr.co/edit/mBMNaLaw5Udr4FXlspSy?p=preview)
 
 ## Testing
 ### Install global dependencies
@@ -74,27 +100,9 @@ Release a new major version
 
     $ grunt release:major
 
-## Author
-[]()
+# Author
+[Litixsoft GmbH](http://www.litixsoft.de)
 
-## License
-Copyright (C) 2014  <>
-Licensed under the MIT license.
+### License
+Copyright (c) 2014 Litixsoft GmbH Licensed under the MIT license.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
