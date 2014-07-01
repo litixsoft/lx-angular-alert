@@ -13,11 +13,10 @@ content and appearance of the alarm box.
 	$ bower install lx-angular-alert
 
 ## Usage
-
 example.js
 ```javascript
-angular.module('example', ['ui.bootstrap', 'lx.alert'])
-.controller('ExampleCtrl', function ($scope, $lxAlert) {
+angular.module('app', ['ui.bootstrap', 'lx.alert'])
+.controller('DemoCtrl', function ($scope, $lxAlert) {
     $scope.lxAlert = $lxAlert;
     $scope.showAlert = function(type) {
         $scope.lxAlert[type]('Info message from controller');
@@ -31,16 +30,37 @@ example.html
 	<h1>Demo</h1>
 	<lx-alert service="lxAlert" on-show="showAlert()"></lx-alert>
 	<div class='btn-group'>
-		<button class='btn btn-default' ng-click="showAlert('info')">Info-Alert</button>
-      	<button class='btn btn-default' ng-click="showAlert('success')">Success-Alert</button>
+	  <button class='btn btn-default' ng-click="showAlert('info')">Info-Alert</button>
+      <button class='btn btn-default' ng-click="showAlert('success')">Success-Alert</button>
       <button class='btn btn-default' ng-click="showAlert('warning')">Warning-Alert</button>
       <button class='btn btn-default' ng-click="showAlert('danger')">Danger-Alert</button>
     </div>
 </div>
 ```
-
 ## [Demo in plunker](http://plnkr.co/edit/mBMNaLaw5Udr4FXlspSy?p=preview)
 
+## angular.module('lx.alert')
+### .factory('$lxAlert')
+Service for angular-ui alert handling which shows different alert boxes in an application.
+
+#### Methods
+- lxAlert.info(string:message): Provides a simple note to the information of the user.
+- lxAlert.success(string:message): Delivers a message for the successful completion of a process.
+- lxAlert.warning(string:message): Delivers a striking warning.
+- lxAlert.danger(string:message): Provides a alarm message for heavier errors.
+- lxAlert.close(): Hides the message box again.
+
+The message parameter contains the message to be displayed.
+
+### .directive('lxAlert')
+Markup for alert. It is the place holder which contains the DOM-content to show alert messages.
+
+#### Usage
+as element:
+```html
+<bbc-alert>
+</bbc-alert>
+```
 ## Testing
 ### Install global dependencies
 
