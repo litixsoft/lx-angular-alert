@@ -37,7 +37,7 @@ example.html
     </div>
 </div>
 ```
-## [Demo in plunker](http://plnkr.co/edit/mBMNaLaw5Udr4FXlspSy?p=preview)
+<a class="button primary" href="http://plnkr.co/edit/mBMNaLaw5Udr4FXlspSy?p=preview"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</a>
 
 ## angular.module('lx.alert')
 ### .factory('$lxAlert')
