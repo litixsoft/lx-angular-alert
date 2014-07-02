@@ -28,7 +28,7 @@ example.html
 ```html
 <div = ng-controller="DemoCtrl">
 	<h1>Demo</h1>
-	<lx-alert service="lxAlert" on-show="showAlert()"></lx-alert>
+	<lx-alert service="lxAlert"></lx-alert>
 	<div class='btn-group'>
 	  <button class='btn btn-default' ng-click="showAlert('info')">Info-Alert</button>
       <button class='btn btn-default' ng-click="showAlert('success')">Success-Alert</button>
@@ -37,7 +37,7 @@ example.html
     </div>
 </div>
 ```
-<a class="button primary" href="http://plnkr.co/edit/mBMNaLaw5Udr4FXlspSy?p=preview"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</a>
+## [Edit in plunker](http://plnkr.co/edit/mBMNaLaw5Udr4FXlspSy?p=preview "plunker")
 
 ## angular.module('lx.alert')
 ### .factory('$lxAlert')
@@ -58,11 +58,17 @@ The message parameter contains the message to be displayed.
 ### .directive('lxAlert')
 Markup for alert. It is the place holder which contains the DOM-content to show alert messages.
 
+#### Parameter
+
+| Param   | Type     | Details                                                |
+|-------- | -------- | ------------------------------------------------------ |
+| service | $lxAlert | Holds the lxAlert factory                              |
+
 #### Usage
 as element:
 ```html
-<bbc-alert>
-</bbc-alert>
+<lx-alert>
+</lx-alert>
 ```
 ## Testing
 ### Install global dependencies
