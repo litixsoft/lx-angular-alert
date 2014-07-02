@@ -26,7 +26,7 @@ angular.module('app', ['ui.bootstrap', 'lx.alert'])
 example.html
 
 ```html
-<div = ng-controller="DemoCtrl">
+<div ng-controller="DemoCtrl">
 	<h1>Demo</h1>
 	<lx-alert service="lxAlert"></lx-alert>
 	<div class='btn-group'>
@@ -67,8 +67,7 @@ Markup for alert. It is the place holder which contains the DOM-content to show 
 #### Usage
 as element:
 ```html
-<lx-alert>
-</lx-alert>
+<lx-alert service="lxAlert"></lx-alert>
 ```
 ## Testing
 ### Install global dependencies
