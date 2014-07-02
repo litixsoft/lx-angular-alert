@@ -5,14 +5,22 @@
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css"/>
     <title>Alert-Example</title>
 </head>
-<body ng-app="example">
+<body ng-app="demo">
 <h1>lx-angular-alert Example:</h1>
+<p>lx-angular-alert provides a service with a directive to display information to the user.
+    For this, a box will be temporarily displayed in the UI. On the methods and parameters of the service can be controlled
+    content and appearance of the alarm box.</p>
+<div class="btn-group">
+    <button class='btn btn-default' ng-click="showAlert('info')">Info-Alert</button>
+    <button class='btn btn-default' ng-click="showAlert('success')">Success-Alert</button>
+    <button class='btn btn-default' ng-click="showAlert('warning')">Warning-Alert</button>
+    <button class='btn btn-default' ng-click="showAlert('danger')">Danger-Alert</button>
+</div>
+
+<lx-alert service="lxAlert" on-show="showAlert()"></lx-alert>
 
 <script src="angular/angular.js"></script>
-<script src="angular-route/angular-route.js"></script>
 <script src="angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<script src="angular-highlightjs/angular-highlightjs.js"></script>
-<script src="highlightjs/highlight.pack.js"></script>
 <script src="example.js"></script>
 </body>
 </html>

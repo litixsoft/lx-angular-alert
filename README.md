@@ -44,11 +44,14 @@ example.html
 Service for angular-ui alert handling which shows different alert boxes in an application.
 
 #### Methods
-- lxAlert.info(string:message): Provides a simple note to the information of the user.
-- lxAlert.success(string:message): Delivers a message for the successful completion of a process.
-- lxAlert.warning(string:message): Delivers a striking warning.
-- lxAlert.danger(string:message): Provides a alarm message for heavier errors.
-- lxAlert.close(): Hides the message box again.
+
+| Method | Param   | Type   | Details                                                |
+|--------|-------- | -------| ------------------------------------------------------ |
+| info   | message | string | Provides a simple note to the information of the user. |
+| success  | message | string | Delivers a message for the successful completion of a process. |
+| warning   | message | string | Delivers a striking warning. |
+| danger   | message | string | Provides a alarm message for heavier errors. |
+| close   |  |  |  Hides the message box again.|
 
 The message parameter contains the message to be displayed.
 
