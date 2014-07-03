@@ -42,6 +42,67 @@ module.exports = function (grunt) {
             ci: ['build/reports'],
             tmp: ['.tmp']
         },
+        // Watches files for changes and runs tasks based on the changed files
+        watch: {
+            js: {
+                files: ['example/**/*.js', 'src/**/*.js'],
+                tasks: ['newer:jshint:all'],
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                }
+            },
+            jsTest: {
+                files: ['test/**/*.spec.js'],
+                tasks: ['newer:jshint:test', 'karma:unit']
+            },
+            livereload: {
+                options: {
+                    livereload: '<%= connect.options.livereload %>'
+                },
+                files: [
+                    'example/**/*.html'
+                ]
+            }
+        },
+        connect: {
+            options: {
+                port: 9000,
+                // Change this to '0.0.0.0' to access the server from outside.
+                hostname: 'localhost',
+                livereload: 35729
+            },
+            livereload: {
+                options: {
+                    open: true,
+                    middleware: function (connect) {
+                        return [
+                            connect().use(
+                                '/bower_components',
+                                connect.static('./bower_components')
+                            ),
+                            connect.static('./example'),
+                            connect.static('./src')
+                        ];
+                    }
+                }
+            },
+            test: {
+                options: {
+                    port: 9001,
+                    middleware: function (connect) {
+                        return [
+                            connect.static('./test'),
+                            connect().use(
+                                '/bower_components',
+                                connect.static('./bower_components')
+                            ),
+                            connect.static('./example'),
+                            connect.static('./src')
+                        ];
+                    }
+                }
+            }
+        },
         concat: {
             dist: {
                 options: {
@@ -191,6 +252,11 @@ module.exports = function (grunt) {
         require('fs').chmodSync('.git/hooks/commit-msg', '0755');
         grunt.log.ok('Registered git hook: commit-msg');
     });
+
+    grunt.registerTask('serve', [
+        'connect:livereload',
+        'watch'
+    ]);
 
     grunt.registerTask('lint', ['jshint:test']);
     grunt.registerTask('test', ['git:commitHook', 'clean:jasmine', 'jshint:test', 'karma:unit' ]);

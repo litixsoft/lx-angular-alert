@@ -1,42 +1,40 @@
 {
-  "name": "lx-angular-alert",
-  "version": "0.1.0",
-  "description": "The best module ever.",
-  "homepage": "https://github.com/litixsoft/lx-angular-alert",
-  "author": {
-    "name": "Litixsoft GmbH",
-    "email": "development@litixsoft.de"
-  },
-  "maintainers": [
-    "Timo Liebetrau"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "lx-angular-alert"
-  ],
-  "main": "./lx-angular-alert.js",
-  "ignore": [
-    ".*",
-    "bower_components",
-    "build",
-    "CHANGELOG.md",
-    "Gruntfile.js",
-    "lib",
-    "LICENSE",
-    "node_modules",
-    "package.json",
-    "test",
-    "validate-commit-msg.js"
-  ],
-  "dependencies": {
-    "angular": "1.2.18"
-  },
-  "devDependencies": {
-    "angular-mocks": "1.2.18",
-    "angular-route": "~1.2.18",
-    "angular-bootstrap": "~0.11.0",
-    "bootstrap": "~3.2.0",
-    "angular-highlightjs": "~0.3.0",
-    "highlightjs": "~8.0.0"
-  }
+    "name": "lx-angular-alert",
+    "version": "0.1.0",
+    "description": "The best module ever.",
+    "homepage": "https://github.com/litixsoft/lx-angular-alert",
+    "author": {
+        "name": "Litixsoft GmbH",
+        "email": "development@litixsoft.de"
+    },
+    "maintainers": [
+        "Timo Liebetrau <t.liebetrau@litixsoft.de>",
+        "Sven Bernstein <s.bernstein@litixsoft.de>"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "lx-angular-alert"
+    ],
+    "main": "./lx-angular-alert.js",
+    "ignore": [
+        ".*",
+        "bower_components",
+        "build",
+        "CHANGELOG.md",
+        "Gruntfile.js",
+        "lib",
+        "LICENSE",
+        "node_modules",
+        "package.json",
+        "test",
+        "validate-commit-msg.js"
+    ],
+    "dependencies": {
+        "angular": "1.2.18"
+    },
+    "devDependencies": {
+        "angular-mocks": "1.2.18",
+        "angular-bootstrap": "~0.11.0",
+        "bootstrap": "~3.2.0"
+    }
 }

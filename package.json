@@ -1,32 +1,33 @@
 {
     "name": "lx-angular-alert",
-    "version": "0.0.0",
-    "description": "The best module ever.",
-    "homepage": "user/repo",
+    "version": "1.0.0",
+    "description": "Alert module based on angular-bootstrap alert.",
+    "homepage": "https://github.com/litixsoft/lx-angular-alert",
     "author": {
-        "name": "",
-        "email": ""
+        "name": "Litixsoft GmbH",
+        "email": "info@litixsoft.de"
     },
     "maintainers": [
-        ""
+        "Timo Liebetrau <t.liebetrau@litixsoft.de>",
+        "Sven Bernstein <s.bernstein@litixsoft.de>"
     ],
     "repository": {
         "type": "git",
-        "url": "user/repo"
+        "url": "https://github.com/litixsoft/lx-angular-alert.git"
     },
     "bugs": {
-        "url": "user/repo/issues"
+        "url": "https://github.com/litixsoft/lx-angular-alert/issues"
     },
     "license": "MIT",
     "licenses": [
         {
            "type": "MIT",
-           "url": "user/repo/blob/master/LICENSE"
+           "url": "https://github.com/litixsoft/lx-angular-alert/blob/master/LICENSE"
         }
     ],
     "keywords": [
         "lx-angular-alert",
-        ""
+        "angular-bootstrap"
     ], 
     "engines": {
         "node": ">=0.10.0"
@@ -42,9 +43,11 @@
         "grunt-bg-shell": "^2.3.1",
         "grunt-bump": "^0.0.14",
         "grunt-contrib-clean": "^0.5.0",
+        "grunt-contrib-connect": "^0.7.1",
         "grunt-contrib-concat": "^0.4.0",
         "grunt-contrib-jshint": "^0.10.0",
         "grunt-contrib-uglify": "^0.5.0",
+        "grunt-contrib-watch": "^0.6.1",
         "grunt-conventional-changelog": "^1.1.0",
         "grunt-karma": "^0.8.3",
         "grunt-ngmin": "^0.0.3",
