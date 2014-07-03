@@ -7,20 +7,32 @@
     <script>document.write('<base href="' + document.location + '" />');</script>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="bower_components/angular/angular.min.js"></script>
-    <!--<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.0/ui-bootstrap-tpls.js"></script>-->
     <script src="lx-angular-alert.js"></script>
     <script src="app.js"></script>
 </head>
 
-<body ng-controller="DemoCtrl">
+<body ng-controller="DemoCtrl" style="margin:20px;">
 <h1>Demo</h1>
-<lx-alert service="lxAlert" on-show="showAlert()"></lx-alert>
+<lx-alert service="lxAlert" msg-timeout="3000" on-show="showAlert()"></lx-alert>
+
 <div class='btn-group'>
     <button class='btn btn-default' ng-click="showAlert('info')">Info-Alert</button>
     <button class='btn btn-default' ng-click="showAlert('success')">Success-Alert</button>
     <button class='btn btn-default' ng-click="showAlert('warning')">Warning-Alert</button>
     <button class='btn btn-default' ng-click="showAlert('danger')">Danger-Alert</button>
 </div>
+<hr>
+<p>creating the alert msg and setting a timeout of 3000ms until fading out</p>
+<pre>
+&lt;lx-alert service="lxAlert" msg-timeout="3000" on-show="showAlert()"&gt;&lt;/lx-alert&gt;
+</pre>
+<p>or set a 1000ms timeout via setMsgTimeout method in your controller</p>
+<pre>
+$scope.lxAlert = $lxAlert;
+$scope.lxAlert.setMsgTimeout(1000);
+</pre>
+
 </body>
 </html>

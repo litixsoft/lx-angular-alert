@@ -38,6 +38,9 @@ angular.module('lx.alert', [])
 
         // private show helper
         var show = function (type, msg) {
+            console.log("Tpye: ",type);
+            console.log("MSG: ",msg);
+
             pub.type = type;
             pub.msg = msg;
             pub.visible = true;
@@ -50,6 +53,21 @@ angular.module('lx.alert', [])
                 promise = $timeout(function () {
                     close();
                 }, pub.timeout);
+            }
+        };
+
+        /**
+         * @ngdoc method
+         * @name lx.alert.$lxAlert#setMsgTimeout
+         * @methodOf lx.alert.$lxAlert
+         *
+         * @description
+         * sets a new timeout until the alert message is close
+         *
+         */
+        pub.setMsgTimeout = function (time) {
+            if(time){
+                pub.timeout = time;
             }
         };
 
@@ -140,10 +158,26 @@ angular.module('lx.alert', [])
             restrict: 'E',
             replace: true,
             template: '<div class="lx-alert animate-show" ng-show="service.visible">' +
-                '<alert class="ng-cloak" type="service.type" close="service.close()">{{ service.msg }}</alert>' +
+                '<alert ng-repeat="alert in alerts" class="ng-cloak" type="{{alert.type}}" close="service.close()">{{ alert.msg }}</alert>' +
                 '</div>',
             scope: {
-                service: '='
+                service: '=',
+                msgTimeout: '='
+            },
+            link: function (scope) {
+                scope.alerts = [];
+
+                scope.$watch('msgTimeout',function(val){
+                    if(val && val > 100){
+                        scope.service.setMsgTimeout(val);
+                    }
+//                    console.log("msgTimeOutDirective: ",val);
+                });
+
+                scope.$watch('service.type',function(){
+                    scope.alerts = [];
+                    scope.alerts.push({type: scope.service.type, msg: scope.service.msg});
+                });
             }
         };
     });

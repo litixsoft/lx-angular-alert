@@ -21,6 +21,16 @@ describe('lx.alert', function () {
             expect(typeof service.danger).toBe('function');
         });
 
+        it('should set timeout correct', function () {
+            service.setMsgTimeout(1000);
+            expect(service.timeout).toBe(1000);
+        });
+
+        it('should not set timeout and use standard time 5000ms', function () {
+            service.setMsgTimeout();
+            expect(service.timeout).toBe(5000);
+        });
+
         it('should be invisible after close', function () {
             service.visible = true;
             service.close();
@@ -101,7 +111,7 @@ describe('lx.alert', function () {
             compile = $compile;
             scope = $rootScope.$new();
             scope.lxAlert = service;
-            element = angular.element('<lx-alert service="lxAlert" on-show="showAlert()"></lx-alert>');
+            element = angular.element('<lx-alert service="lxAlert" msg-timeout="3000" on-show="showAlert()"></lx-alert>');
             compile(element)(scope);
             scope.model = {};
             scope.$digest();
@@ -110,6 +120,7 @@ describe('lx.alert', function () {
         it('should be initialized correctly', function () {
             var elementScope = element.isolateScope();
             expect(elementScope.service).toBeDefined();
+            expect(elementScope.service.timeout).toBe(3000);
             expect(typeof elementScope.service).toBe('object');
             expect(typeof elementScope.service.close).toBe('function');
             expect(typeof elementScope.service.info).toBe('function');
@@ -118,4 +129,25 @@ describe('lx.alert', function () {
             expect(typeof elementScope.service.danger).toBe('function');
         });
     });
+    describe('lxAlert timeout to small', function () {
+        var scope, wrongElement, compile;
+
+        beforeEach(inject(function ($compile, $rootScope) {
+            compile = $compile;
+            scope = $rootScope.$new();
+            scope.lxAlert = service;
+            wrongElement = angular.element('<lx-alert service="lxAlert" msg-timeout="30" on-show="showAlert()"></lx-alert>');
+            compile(wrongElement)(scope);
+            scope.model = {};
+            scope.$digest();
+        }));
+
+        it('should be initialized correctly', function () {
+            var elementScope = wrongElement.isolateScope();
+            expect(elementScope.service).toBeDefined();
+            expect(elementScope.service.timeout).toBe(5000);
+            expect(typeof elementScope.service).toBe('object');
+        });
+    });
+
 });
