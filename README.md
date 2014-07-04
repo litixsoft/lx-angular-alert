@@ -1,5 +1,5 @@
 # lx-angular-alert
-[![Build Status](https://secure.travis-ci.org//lx-angular-alert.svg?branch=master)](https://travis-ci.org//lx-angular-alert) [![david-dm](https://david-dm.org//lx-angular-alert.svg?theme=shields.io)](https://david-dm.org//lx-angular-alert/) [![david-dm](https://david-dm.org//lx-angular-alert/dev-status.svg?theme=shields.io)](https://david-dm.org//lx-angular-alert#info=devDependencies&view=table) 
+[![Build Status](https://secure.travis-ci.org/litixsoft/lx-angular-alert.svg?branch=master)](https://travis-ci.org/litixsoft/lx-angular-alert) [![david-dm](https://david-dm.org/litixsoft/lx-angular-alert.svg?theme=shields.io)](https://david-dm.org/litixsoft/lx-angular-alert/) [![david-dm](https://david-dm.org/litixsoft/lx-angular-alert/dev-status.svg?theme=shields.io)](https://david-dm.org/litixsoft/lx-angular-alert#info=devDependencies&view=table) 
 
 lx-angular-alert provides a service with a directive to display information to the user.
 For this, a box will be temporarily displayed in the UI. On the methods and parameters of the service can be controlled
