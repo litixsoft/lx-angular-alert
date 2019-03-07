@@ -1,3 +1,6 @@
+    Project is deprecated. No continue development, no bugfixing anymore.
+---
+
 # lx-angular-alert
 [![Build Status](https://secure.travis-ci.org/litixsoft/lx-angular-alert.svg?branch=master)](https://travis-ci.org/litixsoft/lx-angular-alert) [![david-dm](https://david-dm.org/litixsoft/lx-angular-alert.svg?theme=shields.io)](https://david-dm.org/litixsoft/lx-angular-alert/) [![david-dm](https://david-dm.org/litixsoft/lx-angular-alert/dev-status.svg?theme=shields.io)](https://david-dm.org/litixsoft/lx-angular-alert#info=devDependencies&view=table) 
 
